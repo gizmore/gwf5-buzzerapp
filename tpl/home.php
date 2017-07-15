@@ -9,21 +9,26 @@ $json = array(
 echo $module->onRenderTabs();
 ?>
 <div
- layout="row"
- layout-fill flex
  ng-controller="BUZCtrl"
  ng-keydown="onKeyDown($event)"
  ng-init='initJSON(<?= json_encode($json); ?>)'>
- 
- <a
-  layout="column"
-  class="md-button buzz-img-btn"
-  flex="50"
-  ng-repeat="button in data.buttons"
-  ng-click="play(button)">
-   <img class="" ng-src="{{imageUrlForButton(button)}}" />
-   <b>F1</b>
- </a>
- <div ng-click="addButton">+</div>
+ <div
+ flex
+ layout="row"
+ layout-wrap
+ layout-fill
+  ng-controller="GWFSortCtrl"
+  ng-init='initJSON({url:"<?= jxhref('Buzzerapp', 'SortButton'); ?>", selector:"a.buzz-img-btn"})'>
+   <a
+ flex="45"
+    gdo-id="{{button.button_id}}"
+    class="md-button buzz-img-btn a"
+    ng-repeat="button in data.buttons"
+    ng-click="play(button)">
+     <img class="" ng-src="{{imageUrlForButton(button)}}" />
+     <b>{{button.button_id}}</b>
+   </a>
+   <div ng-click="addButton">+</div>
+ </div>
   
 </div>
