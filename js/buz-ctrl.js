@@ -16,11 +16,11 @@ controller('BUZCtrl', function($scope) {
 	};
 	
 	$scope.audioUrlForButton = function(button) {
-		return "/index.php?mo=Buzzerapp&me=Audio&button="+button.button_id;
+		return "index.php?mo=Buzzerapp&me=Audio&button="+button.button_id;
 	};
 	
 	$scope.imageUrlForButton = function(button) {
-		return "/index.php?mo=Buzzerapp&me=Icon&button="+button.button_id;
+		return "index.php?mo=Buzzerapp&me=Icon&button="+button.button_id;
 	};
 	
 	$scope.onKeyDown = function($event) {
